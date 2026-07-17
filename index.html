@@ -606,7 +606,7 @@
         }
 
         function updateCompletedDatesFinal() {
-            const today = new Date().toLocaleDateString('es-ES', { weekday: 'short' }).slice(0, 3);
+            const today = new Date().toLocaleDateString('es-ES', { weekday: 'long' });            
             let dates = [...completedDates];
             if (!dates.includes(today)) {
                 dates.push(today);
@@ -669,7 +669,7 @@
                 renderSession();
             } else {
                 // Mark today as completed
-                const today = new Date().toLocaleDateString('es-ES', { weekday: 'short' }).slice(0, 3);
+                const today = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
                 if (!completedDates.includes(today)) {
                     completedDates.push(today);
                     localStorage.setItem('citaDiosDates', JSON.stringify(completedDates));
